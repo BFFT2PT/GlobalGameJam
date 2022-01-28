@@ -6,6 +6,10 @@ public class CameraFollow : MonoBehaviour
 
     [SerializeField]
     Transform _target;
+    [SerializeField]
+    float _dampTime = 0.15f;
+
+    private Vector3 velocity = Vector3.zero;
 
     private void Awake()
     {
@@ -21,11 +25,22 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, _target.position, 0.1f);
+        if(_target != null)
+        {
+            float point = Camera.main.WorldToViewportPoint(_target.position).x;
+            float delta = _target.position.x - Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0, 0)).x;
+            float destination = transform.position.x + delta;
+            transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination, 0, -10), ref velocity, _dampTime);
+        }
     }
 
     public void ChangeTarget(Transform newTarget)
     {
         _target = newTarget;
+    }
+
+    public Transform GetTargetTransform()
+    {
+        return _target;
     }
 }
