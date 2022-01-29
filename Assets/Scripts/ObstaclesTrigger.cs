@@ -8,8 +8,13 @@ public class ObstaclesTrigger : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            ObstaclesSpawner.instance.SpawnObstacles();
+            
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        ObstaclesSpawner.instance.SpawnObstacles();
     }
 }
