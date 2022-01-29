@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7932954735264717291}
   - component: {fileID: 2027235595110413816}
   m_Layer: 0
-  m_Name: PowerThunder
+  m_Name: PowerThunder_Futebol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 749e8733e90266e40bbbc63e2967b491
+guid: b77a16ae7cf11d843894eaafd645a5c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4252001518698456072
-    second: TEXTURE_Platforms_0
+      213: -8105560202311982947
+    second: Thunder_0
   - first:
-      213: 4188199725659781123
-    second: TEXTURE_Platforms_1
+      213: 6004246453574341425
+    second: Thunder_1
   - first:
-      213: -36390690088847658
-    second: TEXTURE_Platforms_2
+      213: -6931400272290298348
+    second: Thunder_2
   - first:
-      213: 3438209611968146207
-    second: TEXTURE_Platforms_3
+      213: -190768770967579635
+    second: Thunder_3
   - first:
-      213: 2745810583341646993
-    second: TEXTURE_Platforms_4
+      213: -8380717354252690839
+    second: Thunder_4
   - first:
-      213: 9155867336998307762
-    second: TEXTURE_Platforms_5
+      213: 8799301134570436102
+    second: Thunder_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,10 +61,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -181,12 +181,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TEXTURE_Platforms_0
+      name: Thunder_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 16
-        width: 17
+        x: 0
+        y: 32
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -195,62 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 804617a6ad4220b30800000000000000
-      internalID: 4252001518698456072
+      spriteID: d90a6abe0f3438f80800000000000000
+      internalID: -8105560202311982947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TEXTURE_Platforms_1
+      name: Thunder_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 15
-        width: 12
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 308f650e5797f1a30800000000000000
-      internalID: 4188199725659781123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TEXTURE_Platforms_2
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 15
-        width: 12
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d67f143cd6be7ff0800000000000000
-      internalID: -36390690088847658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TEXTURE_Platforms_3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 24
+        x: 40
+        y: 2
         width: 16
-        height: 15
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +216,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1be1b8fc69f6bf20800000000000000
-      internalID: 3438209611968146207
+      spriteID: 1339231765e535350800000000000000
+      internalID: 6004246453574341425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TEXTURE_Platforms_4
+      name: Thunder_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 24
+        x: 64
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416471e2d28becf90800000000000000
+      internalID: -6931400272290298348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d045d3440d04a5df0800000000000000
+      internalID: -190768770967579635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
         width: 16
-        height: 15
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19446987d241b1620800000000000000
-      internalID: 2745810583341646993
+      spriteID: 96a11d028f5b1bb80800000000000000
+      internalID: -8380717354252690839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TEXTURE_Platforms_5
+      name: Thunder_5
       rect:
         serializedVersion: 2
-        x: 61
-        y: 4
-        width: 20
-        height: 8
+        x: 104
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b7c26845dc201f70800000000000000
-      internalID: 9155867336998307762
+      spriteID: 60633cdd2c56d1a70800000000000000
+      internalID: 8799301134570436102
       vertices: []
       indices: 
       edges: []

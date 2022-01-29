@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     GameObject _winnerGameObject;
     [SerializeField]
     Transform[] _playersTransform; //0 = Top player ; 1 = Bottom player
+    [SerializeField]
+    Rigidbody2D[] _playersRigs;
 
     bool gameStarted;
 
@@ -45,6 +47,12 @@ public class GameManager : MonoBehaviour
         foreach(PlayerMovement moveScript in _playerMovementScripts)
         {
             moveScript.enabled = false;
+        }
+
+        foreach(Rigidbody2D rig in _playersRigs)
+        {
+            rig.gravityScale = 0;
+            rig.velocity = Vector2.zero;
         }
 
         _winnerGameObject.SetActive(true);
