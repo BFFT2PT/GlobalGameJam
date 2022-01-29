@@ -139,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "PowerUp")
         {
             currentPowerUp = powManager.ShufflePowerUps();
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Lava")

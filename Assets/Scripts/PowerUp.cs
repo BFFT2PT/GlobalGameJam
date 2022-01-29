@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    GameObject[] targets;
+    protected GameObject[] targets;
     protected GameObject opponent;
 
     [SerializeField]
     protected Vector2 offset;
+
+    protected Vector2 pos;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,7 +18,7 @@ public class PowerUp : MonoBehaviour
         targets = GameObject.FindGameObjectsWithTag("Player");
     }
 
-    public void FindOpponentPlayer(GameObject playerWhoActivated)
+    public virtual void FindOpponentPlayer(GameObject playerWhoActivated)
     {
         for(int i = 0; i < targets.Length; i++)
         {
