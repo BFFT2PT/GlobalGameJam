@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,10 +18,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float _jumpForce;
 
+    [SerializeField]
+    float _thunderTime;
+
     BoxCollider2D thisCollider;
     Vector2 colliderDefaultSize;
     Animator thisAnimator;
     bool isSliding;
+    float defaultSpeed;
+    bool coroutineStarted;
 
     GameObject currentPowerUp;
     PowerUpManager powManager;
@@ -33,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         colliderDefaultSize = thisCollider.size;
 
         powManager = PowerUpManager.instance;
+        defaultSpeed = _movementSpeed;
     }
 
     private void Update()
@@ -100,16 +107,38 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PowerUp")
         {
             currentPowerUp = powManager.ShufflePowerUps();
         }
+
+        if (collision.gameObject.tag == "Lava")
+        {
+            _movementSpeed /= 2;
+        }
+
+        if(collision.gameObject.tag == "Thunder")
+        {
+            StartCoroutine(SlowedDownRoutine());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(!coroutineStarted)
+        {
+            _movementSpeed = defaultSpeed;
+        }
+    }
+
+    IEnumerator SlowedDownRoutine()
+    {
+        coroutineStarted = true;
+        _movementSpeed /= 2;
+        yield return new WaitForSeconds(_thunderTime);
+        _movementSpeed = defaultSpeed;
+        coroutineStarted = false;
     }
 }

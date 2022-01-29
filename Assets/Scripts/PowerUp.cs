@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
     protected GameObject opponent;
 
     [SerializeField]
-    Vector2 offset;
+    protected Vector2 offset;
 
     // Start is called before the first frame update
     void Awake()

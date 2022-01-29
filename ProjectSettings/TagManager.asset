@@ -8,6 +8,8 @@ TagManager:
   - BottomFloor
   - Floor
   - PowerUp
+  - Lava
+  - Thunder
   layers:
   - Default
   - TransparentFX
