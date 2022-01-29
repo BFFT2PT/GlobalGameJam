@@ -10,6 +10,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     protected Vector2 offset;
 
+    protected Vector2 pos;
+
     // Start is called before the first frame update
     void Awake()
     {

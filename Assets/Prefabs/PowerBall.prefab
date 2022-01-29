@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c6fb3fefb2e8f4db254b44c5937302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 15, y: 2.2}
+  offset: {x: 15, y: 1}
   _movementSpeed: 2
 --- !u!58 &2996720798934821556
 CircleCollider2D:
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
