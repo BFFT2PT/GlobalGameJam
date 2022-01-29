@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     PlayerMovement[] _playerMovementScripts;
     [SerializeField]
     GameObject _winnerGameObject;
+    [SerializeField]
+    Transform[] _playersTransform; //0 = Top player ; 1 = Bottom player
+
+    bool gameStarted;
 
     private void Awake()
     {
@@ -28,11 +32,14 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied(string playerName)
     {
+        print(playerName);
         switch(playerName)
         {
-            case "Player1": _winnerText.text = "Player 1 Wins!!";
+            case "Player1": _winnerText.text = "Player 2 Wins!!";
+                CameraFocus.instance.FocusWinner(_playersTransform[1]);
                 break;
-            case "Player2": _winnerText.text = "Player 2 Wins!!";
+            case "Player2": _winnerText.text = "Player 1 Wins!!";
+                CameraFocus.instance.FocusWinner(_playersTransform[0]);
                 break;
         }
 
@@ -42,5 +49,15 @@ public class GameManager : MonoBehaviour
         }
 
         _winnerGameObject.SetActive(true);
+    }
+
+    public bool GameState()
+    {
+        return gameStarted;
+    }
+
+    public void ChangeGameState(bool newBool)
+    {
+        gameStarted = newBool;
     }
 }

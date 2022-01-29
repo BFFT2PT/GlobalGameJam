@@ -34,5 +34,6 @@ public class AnimationIntro : MonoBehaviour
         _cameraFollowScript.enabled = true;
         _PlayerPositionCheckScript.enabled = true;
         thisAnimator.enabled = false;
+        GameManager.instance.ChangeGameState(true);
     }
 }
