@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537060912733168877}
   - component: {fileID: 1752720783064105057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_FlipX: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4708848541620175273}
   - component: {fileID: 5598904265055623184}
   - component: {fileID: 4816827181512454518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PowerMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
