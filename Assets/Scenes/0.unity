@@ -472,7 +472,9 @@ MonoBehaviour:
   _jumpInput: TopJump
   _slideInput: TopSlide
   _horizontalInput: TopHorizontal
+  _powerUpInput: 
   _jumpForce: 12
+  _thunderTime: 0
 --- !u!212 &294920223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1220,7 +1222,9 @@ MonoBehaviour:
   _jumpInput: BottomJump
   _slideInput: BottomSlide
   _horizontalInput: BottomHorizontal
+  _powerUpInput: 
   _jumpForce: 12
+  _thunderTime: 0
 --- !u!212 &885521467
 SpriteRenderer:
   m_ObjectHideFlags: 0
