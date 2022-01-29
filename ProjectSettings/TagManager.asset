@@ -7,6 +7,7 @@ TagManager:
   - TopFloor
   - BottomFloor
   - Floor
+  - PowerUp
   layers:
   - Default
   - TransparentFX

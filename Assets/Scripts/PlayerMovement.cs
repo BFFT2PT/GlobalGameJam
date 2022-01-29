@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     string _jumpInput;
     [SerializeField]
     string _slideInput;
+    [SerializeField]
+    string _powerUpInput;
 
     bool isGrounded;
     Rigidbody2D thisRig;
@@ -20,12 +22,17 @@ public class PlayerMovement : MonoBehaviour
     Animator thisAnimator;
     bool isSliding;
 
+    GameObject currentPowerUp;
+    PowerUpManager powManager;
+
     private void Start()
     {
         thisRig = GetComponent<Rigidbody2D>();
         thisCollider = GetComponent<BoxCollider2D>();
         thisAnimator = GetComponent<Animator>();
         colliderDefaultSize = thisCollider.size;
+
+        powManager = PowerUpManager.instance;
     }
 
     private void Update()
@@ -39,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         PlayerJump();
         PlayerSlide();
+        PlayerPowerUp();
         FloorDetection();
     }
 
@@ -68,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void PlayerPowerUp()
+    {
+        if (Input.GetButtonDown(_powerUpInput) && currentPowerUp)
+        {
+            GameObject pow = Instantiate(currentPowerUp);
+            pow.GetComponent<PowerUp>().FindOpponentPlayer(gameObject);
+            currentPowerUp = null;
+        }
+    }
+
     void FloorDetection()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
@@ -85,5 +103,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            currentPowerUp = powManager.ShufflePowerUps();
+        }
     }
 }
