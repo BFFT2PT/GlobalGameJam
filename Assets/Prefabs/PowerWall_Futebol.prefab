@@ -154,4 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 10, y: 4}
+  sprites:
+  - {fileID: 5305514756618480673, guid: 1a5d4511d208f214bbd5d924b0a6f701, type: 3}
+  - {fileID: 3193447657515557758, guid: 1a5d4511d208f214bbd5d924b0a6f701, type: 3}
   destroyTime: 4

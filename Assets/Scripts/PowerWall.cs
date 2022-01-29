@@ -22,13 +22,15 @@ public class PowerWall : PowerUp
             }
         }
 
-        if(opponent.name == "TopPlayer")
+        if (opponent.name == "TopPlayer")
         {
             transform.position = new Vector2(opponent.transform.position.x + offset.x, 3.5f);
+            sr.sprite = sprites[0];
         }
         else
         {
             transform.position = new Vector2(opponent.transform.position.x + offset.x, -1.8f);
+            sr.sprite = sprites[1];
         }
     }
 }
