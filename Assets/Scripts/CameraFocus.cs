@@ -39,8 +39,9 @@ public class CameraFocus : MonoBehaviour
         while(lerpValue < 1)
         {
             transform.position = Vector3.Lerp(transform.position, targetPosition, lerpValue);
+            Camera.main.orthographicSize = Mathf.Lerp(5, 3, lerpValue);
             lerpValue += 0.002f;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }

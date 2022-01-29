@@ -12,5 +12,6 @@ public class PlayerManager : MonoBehaviour
         if(GameManager.instance.GameState())
         GameManager.instance.PlayerDied(_playerName);
         GameManager.instance.ChangeGameState(false);
+        ObstaclesSpawner.instance.ChangeSpawnState(false);
     }
 }

@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     string _jumpInput;
     [SerializeField]
     string _slideInput;
+    [SerializeField]
+    string _horizontalInput;
 
     bool isGrounded;
     Rigidbody2D thisRig;
@@ -18,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D thisCollider;
     Vector2 colliderDefaultSize;
     Animator thisAnimator;
+    SpriteRenderer thisSprite;
     bool isSliding;
 
     private void Start()
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         thisRig = GetComponent<Rigidbody2D>();
         thisCollider = GetComponent<BoxCollider2D>();
         thisAnimator = GetComponent<Animator>();
+        thisSprite = GetComponent<SpriteRenderer>();
         colliderDefaultSize = thisCollider.size;
     }
 
@@ -35,11 +39,33 @@ public class PlayerMovement : MonoBehaviour
 
     void MovingRight()
     {
-        transform.Translate(Vector2.right * _movementSpeed * Time.deltaTime);
-
+        HorizontalMovement();
         PlayerJump();
         PlayerSlide();
         FloorDetection();
+    }
+
+    void HorizontalMovement()
+    {
+        float inputX = Input.GetAxisRaw(_horizontalInput);
+
+        if(inputX != 0)
+        {
+            thisAnimator.SetBool("IsWalking", true);
+            switch(inputX)
+            {
+                case -1: thisSprite.flipX = true;
+                    break;
+                case 1: thisSprite.flipX = false;
+                    break;
+            }
+        }
+        else
+        {
+            thisAnimator.SetBool("IsWalking", false);
+        }
+
+        transform.Translate(new Vector2(inputX, 0) * _movementSpeed * Time.deltaTime);
     }
 
     void PlayerJump()
@@ -70,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FloorDetection()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
 
         if(hit.collider != null && hit.collider.tag == "Floor")
         {
@@ -80,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+        thisAnimator.SetBool("IsGrounded", isGrounded);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

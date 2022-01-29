@@ -12,6 +12,8 @@ public class AnimationIntro : MonoBehaviour
     PlayerPositionCheck _PlayerPositionCheckScript;
     [SerializeField]
     GameObject goText;
+    [SerializeField]
+    Animator[] _playerAnimators;
 
     Animator thisAnimator;
 
@@ -31,9 +33,15 @@ public class AnimationIntro : MonoBehaviour
         {
             movScript.enabled = true;
         }
+        foreach(Animator anim in _playerAnimators)
+        {
+            anim.enabled = true;
+        }
         _cameraFollowScript.enabled = true;
         _PlayerPositionCheckScript.enabled = true;
         thisAnimator.enabled = false;
         GameManager.instance.ChangeGameState(true);
+        ObstaclesSpawner.instance.ChangeSpawnState(true);
+        ObstaclesSpawner.instance.SpawnObstacles();
     }
 }
