@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TopFloor
   - BottomFloor
+  - Floor
   layers:
   - Default
   - TransparentFX

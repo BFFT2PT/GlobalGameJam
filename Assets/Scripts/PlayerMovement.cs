@@ -10,12 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     string _slideInput;
 
-    bool isGrounded = true;
+    bool isGrounded;
     Rigidbody2D thisRig;
     [SerializeField]
     float _jumpForce;
-    [SerializeField]
-    string _respectiveFloorTag;
 
     BoxCollider2D thisCollider;
     Vector2 colliderDefaultSize;
@@ -41,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         PlayerJump();
         PlayerSlide();
+        FloorDetection();
     }
 
     void PlayerJump()
@@ -69,11 +68,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void FloorDetection()
     {
-        if(collision.gameObject.tag == _respectiveFloorTag)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
+
+        if(hit.collider != null && hit.collider.tag == "Floor")
         {
             isGrounded = true;
         }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }

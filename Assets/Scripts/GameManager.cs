@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied(string playerName)
     {
-        print(playerName);
         switch(playerName)
         {
             case "Player1": _winnerText.text = "Player 2 Wins!!";
