@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    GameObject[] targets;
+    protected GameObject[] targets;
     protected GameObject opponent;
 
     [SerializeField]
@@ -18,7 +18,7 @@ public class PowerUp : MonoBehaviour
         targets = GameObject.FindGameObjectsWithTag("Player");
     }
 
-    public void FindOpponentPlayer(GameObject playerWhoActivated)
+    public virtual void FindOpponentPlayer(GameObject playerWhoActivated)
     {
         for(int i = 0; i < targets.Length; i++)
         {

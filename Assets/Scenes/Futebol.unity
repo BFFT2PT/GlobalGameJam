@@ -189,8 +189,8 @@ MonoBehaviour:
   - {fileID: 885521466}
   _winnerGameObject: {fileID: 969657866}
   _playersTransform:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 294920224}
+  - {fileID: 885521468}
 --- !u!114 &160629379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
   _horizontalInput: TopHorizontal
   _powerUpInput: TopPowerUp
   _jumpForce: 12
-  _thunderTime: 0
+  _thunderTime: 2
 --- !u!212 &294920223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   _horizontalInput: BottomHorizontal
   _powerUpInput: BottomPowerUp
   _jumpForce: 12
-  _thunderTime: 0
+  _thunderTime: 2
 --- !u!212 &885521467
 SpriteRenderer:
   m_ObjectHideFlags: 0

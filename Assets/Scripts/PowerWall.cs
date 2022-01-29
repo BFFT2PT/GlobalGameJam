@@ -11,4 +11,24 @@ public class PowerWall : PowerUp
     {
         Destroy(gameObject, destroyTime);
     }
+
+    public override void FindOpponentPlayer(GameObject playerWhoActivated)
+    {
+        for (int i = 0; i < targets.Length; i++)
+        {
+            if (targets[i] != playerWhoActivated)
+            {
+                opponent = targets[i];
+            }
+        }
+
+        if(opponent.name == "TopPlayer")
+        {
+            transform.position = new Vector2(opponent.transform.position.x + offset.x, 3.5f);
+        }
+        else
+        {
+            transform.position = new Vector2(opponent.transform.position.x + offset.x, -1.8f);
+        }
+    }
 }
