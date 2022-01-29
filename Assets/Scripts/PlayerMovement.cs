@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     string _slideInput;
     [SerializeField]
     string _horizontalInput;
+    [SerializeField]
     string _powerUpInput;
 
     bool isGrounded;
