@@ -12,8 +12,6 @@ public class PowerThunder : PowerUp
     float moveSpeed;
     [SerializeField]
     float distanceBetweenClouds;
-    [SerializeField]
-    float destroyTime;
 
     private void Start()
     {

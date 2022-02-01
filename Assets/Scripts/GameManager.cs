@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     Transform[] _playersTransform; //0 = Top player ; 1 = Bottom player
     [SerializeField]
     Rigidbody2D[] _playersRigs;
+    [SerializeField]
+    GameObject _sceneChangeFade;
 
     bool gameStarted;
 
@@ -56,6 +58,14 @@ public class GameManager : MonoBehaviour
         }
 
         _winnerGameObject.SetActive(true);
+        FadingMusic.instance.StartFadingMusic();
+        StartCoroutine("LoadDelay");
+    }
+
+    IEnumerator LoadDelay()
+    {
+        yield return new WaitForSeconds(3);
+        _sceneChangeFade.SetActive(true);
     }
 
     public bool GameState()

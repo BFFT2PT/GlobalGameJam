@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class PowerWall : PowerUp
 {
-    [SerializeField]
-    float destroyTime = 4f;
-
-    private void Start()
-    {
-        Destroy(gameObject, destroyTime);
-    }
-
     public override void FindOpponentPlayer(GameObject playerWhoActivated)
     {
         for (int i = 0; i < targets.Length; i++)

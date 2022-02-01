@@ -5,7 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 1781d652d46d47b4d85179f358eeb523
+  - enabled: 1
+    path: Assets/Scenes/NewMainMenu.unity
+    guid: f0e905a351457244aa4bb3ef13b4083e
+  - enabled: 1
+    path: Assets/Scenes/LoadingFutebol.unity
+    guid: 024eacc1b2e32a84e910b73e334df4ac
   - enabled: 1
     path: Assets/Scenes/Futebol.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 455c3b61466eab94ea416a5639c779db
+  - enabled: 1
+    path: Assets/Scenes/LoadingPizza.unity
+    guid: 2630698634398674c9818b1ef3352a60
+  - enabled: 1
+    path: Assets/Scenes/Pizza.unity
+    guid: b4f2f8584c0ad5a4391268d047f99107
   m_configObjects: {}

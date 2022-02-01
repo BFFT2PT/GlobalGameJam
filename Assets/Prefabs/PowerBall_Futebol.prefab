@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8113196207278032040}
   - component: {fileID: 2996720798934821556}
   - component: {fileID: 5333769716233186980}
+  - component: {fileID: -4699234540583147070}
   m_Layer: 7
   m_Name: PowerBall_Futebol
   m_TagString: Untagged
@@ -47,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 15, y: 1}
+  sprites: []
+  destroyTime: 0
   _movementSpeed: 6
 --- !u!58 &2996720798934821556
 CircleCollider2D:
@@ -85,6 +88,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4699234540583147070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525371329522880537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2a0f65183a32e469f400bd1261cb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerUpType: Ball
 --- !u!1 &6525371329655276582
 GameObject:
   m_ObjectHideFlags: 0

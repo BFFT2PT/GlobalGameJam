@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4107838406532837477}
   - component: {fileID: 4107838406532837498}
   - component: {fileID: 4107838406532837499}
+  - component: {fileID: 5116881068555344332}
+  - component: {fileID: 1967536722}
   m_Layer: 0
   m_Name: Square
   m_TagString: Lava
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -2414348632736419666, guid: 385a44950fa9d4848a309e2ef4f78143, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,6 +111,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5116881068555344332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107838406532837476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d196e50aab2ef4ca1905b6648f8e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1967536722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107838406532837476}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 107846466fa327244b7ee8ad7c2119eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4107838406542490835
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +153,7 @@ GameObject:
   - component: {fileID: 4107838406542490832}
   - component: {fileID: 4107838406542490833}
   - component: {fileID: 7490440944371264851}
+  - component: {fileID: 4390935984861163842}
   m_Layer: 0
   m_Name: PowerLava_Futebol
   m_TagString: Lava
@@ -134,7 +168,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4107838406542490835}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 0.5, z: 1}
   m_Children:
@@ -174,3 +208,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 5, y: 0}
+  sprites: []
+  destroyTime: 4
+--- !u!114 &4390935984861163842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107838406542490835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2a0f65183a32e469f400bd1261cb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerUpType: Lava

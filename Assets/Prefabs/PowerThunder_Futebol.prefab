@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7932954735264717291}
   - component: {fileID: 2027235595110413816}
+  - component: {fileID: 8624854465857580217}
   m_Layer: 0
   m_Name: PowerThunder_Futebol
   m_TagString: Untagged
@@ -44,8 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 5, y: 3}
+  sprites: []
+  destroyTime: 0.5
   thunderPrefab: {fileID: 2119944211115537822, guid: 267c9ba227c0e4441ae30f3d62986736, type: 3}
   cloudPrefab: {fileID: 1123000248241267967, guid: ff28f8183f430ef4da3a55bfa1151efc, type: 3}
   moveSpeed: 5
-  distanceBetweenClouds: 3
-  destroyTime: 2
+  distanceBetweenClouds: 2
+--- !u!114 &8624854465857580217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595454746465167101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2a0f65183a32e469f400bd1261cb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerUpType: Thunder

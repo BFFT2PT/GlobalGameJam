@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     GameObject currentPowerUp;
     PowerUpManager powManager;
+    DisplayPowerUp _displayScript;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         thisCollider = GetComponent<BoxCollider2D>();
         thisAnimator = GetComponent<Animator>();
         thisSprite = GetComponent<SpriteRenderer>();
+        _displayScript = GetComponent<DisplayPowerUp>();
         colliderDefaultSize = thisCollider.size;
 
         powManager = PowerUpManager.instance;
@@ -115,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GameObject pow = Instantiate(currentPowerUp);
             pow.GetComponent<PowerUp>().FindOpponentPlayer(gameObject);
+            _displayScript.HideIcon();
             currentPowerUp = null;
         }
     }
@@ -139,6 +142,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "PowerUp")
         {
             currentPowerUp = powManager.ShufflePowerUps();
+            currentPowerUp.GetComponent<StringPowerUp>().SendString();
+            _displayScript.ChangeIcon(currentPowerUp.GetComponent<StringPowerUp>().SendString());
             Destroy(collision.gameObject);
         }
 
@@ -159,6 +164,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _movementSpeed = defaultSpeed;
         }
+    }
+
+    public void DefaultSpeed()
+    {
+        _movementSpeed = defaultSpeed;
     }
 
     IEnumerator SlowedDownRoutine()

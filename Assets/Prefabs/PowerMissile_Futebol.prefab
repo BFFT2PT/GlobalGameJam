@@ -92,11 +92,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3605025902003683313}
   - component: {fileID: 4708848541620175273}
-  - component: {fileID: 5598904265055623184}
   - component: {fileID: 4816827181512454518}
+  - component: {fileID: -1906325138372707806}
+  - component: {fileID: 6788842910261503885}
+  - component: {fileID: 230380868105229207}
   m_Layer: 7
   m_Name: PowerMissile_Futebol
-  m_TagString: Untagged
+  m_TagString: Thunder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 3311813494679259012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1537060912733168877}
   m_Father: {fileID: 0}
@@ -132,25 +134,12 @@ MonoBehaviour:
   sprites:
   - {fileID: -931240730793808255, guid: 18395bce18a4db246bfc5490b1c4b0f0, type: 3}
   - {fileID: -7558673754538462546, guid: 18395bce18a4db246bfc5490b1c4b0f0, type: 3}
+  destroyTime: 0
   _movementSpeed: 5
-  _moveTowardsSpeed: 0
+  _moveTowardsSpeed: 0.03
   _updateTime: 0.05
---- !u!70 &5598904265055623184
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311813494679259012}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 1
+  yOffset: 1
+  _explosionPrefab: {fileID: 8023621699229957588, guid: ee8892b4c1c21f34188fc9dda0742f9b, type: 3}
 --- !u!50 &4816827181512454518
 Rigidbody2D:
   serializedVersion: 4
@@ -172,3 +161,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1906325138372707806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311813494679259012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2a0f65183a32e469f400bd1261cb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerUpType: Missile
+--- !u!61 &6788842910261503885
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311813494679259012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.49}
+  m_EdgeRadius: 0
+--- !u!61 &230380868105229207
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311813494679259012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.49}
+  m_EdgeRadius: 0
